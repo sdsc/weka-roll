@@ -1,0 +1,50 @@
+<?xml version="1.0" standalone="no"?>
+
+<kickstart>
+
+<description>
+WEKA ( Waikato Environment for Knowledge Analysis
+http://www.cs.waikato.ac.nz/ml/weka
+</description>
+
+<copyright>
+Copyright (c) 2000 - 2011 The Regents of the University of California.
+All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
+</copyright>
+
+<changelog>
+</changelog>
+
+<post>
+
+# Remove /etc/profile.d files in favor of loadable modules when available
+
+if test `grep -c /opt/modulefiles/applications /etc/profile.d/modules.csh` = 0; then
+  echo 'setenv MODULEPATH /opt/modulefiles/applications:$MODULEPATH' >> \
+       /etc/profile.d/modules.csh
+fi
+if test `grep -c /opt/modulefiles/applications /etc/profile.d/modules.sh` = 0; then
+  echo 'export MODULEPATH=/opt/modulefiles/applications:$MODULEPATH' >> \
+       /etc/profile.d/modules.sh
+fi
+
+if test -f /etc/profile.d/weka.sh; then
+
+  /bin/rm -f /etc/profile.d/weka.*
+  /bin/mkdir -m 0755 -p /opt/modulefiles/applications/weka
+
+<file name="/opt/modulefiles/applications/weka/3.4.19" perms="0644">
+#%Module1.0
+prepend-path PATH /opt/weka/bin
+</file>
+<file name="/opt/modulefiles/applications/weka/.version.3.4.19">
+#%Module1.0
+set ModulesVersion "3.4.19"
+</file>
+/bin/ln -s /opt/modulefiles/applications/weka/.version.3.4.19 \
+           /opt/modulefiles/applications/weka/.version
+fi
+
+</post>
+
+</kickstart>
