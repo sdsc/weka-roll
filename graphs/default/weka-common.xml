@@ -1,6 +1,6 @@
 <?xml version="1.0" standalone="no"?>
 
-<kickstart>
+<graph>
 
 <description>
 WEKA ( Waikato Environment for Knowledge Analysis
@@ -15,7 +15,36 @@ All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
 <changelog>
 </changelog>
 
-<package>weka</package>
+<edge from="base">
+  <to>weka-common</to>
+</edge>
+<order head="base">
+  <tail>weka-common</tail>
+</order>
 
+<edge from="server">
+  <to>weka-server</to>
+</edge>
+<order head="server">
+  <tail>weka-server</tail>
+</order>
 
-</kickstart>
+<edge from="envmodules-common">
+  <to>weka-modules-common</to>
+</edge>
+<order head="envmodules-common">
+  <tail>weka-modules-common</tail>
+</order>
+
+<edge from="base">
+  <to>weka-roll-test</to>
+</edge>
+<order head="base">
+  <tail>weka-roll-test</tail>
+</order>
+
+<order head="weka-common">
+  <tail>weka-modules-common</tail>
+</order>
+
+</graph>
