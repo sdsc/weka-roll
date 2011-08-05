@@ -59,7 +59,7 @@ PKGROOT = /opt/weka
 REDHAT.ROOT = $(PWD)/../../
 
 -include $(ROCKSROOT)/etc/Rules.mk
-SOURCE = weka-$(VERSION)
+SOURCE = $(NAME)-$(VERSION)
 
 build:
 
@@ -69,7 +69,7 @@ install::
 	mkdir -p $(ROOT)/$(PKGROOT)/lib
 	mkdir -p $(ROOT)/$(PKGROOT)/data
 	tar xvf $(NAME)-$(VERSION).tgz
-	cp $(SOURCE)/weka.jar  $(ROOT)/$(PKGROOT)/lib
+	cp $(SOURCE)/$(NAME).jar  $(ROOT)/$(PKGROOT)/lib
 	cp $(SOURCE)/data/*  $(ROOT)/$(PKGROOT)/data
 
 clean::
