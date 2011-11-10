@@ -19,7 +19,6 @@ All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
 
 <post>
 
-# Add a few softlinks needed for the amber verification test to run
 
 <file name="/etc/profile.d/weka.csh" perms="0644">
 set path = ( /opt/weka/bin $path )
