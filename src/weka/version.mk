@@ -1,0 +1,3 @@
+NAME    = weka
+VERSION = 3.4.19
+RELEASE = 1
