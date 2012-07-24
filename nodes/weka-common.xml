@@ -16,21 +16,7 @@ All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
 </changelog>
 
 <package>weka</package>
+<package>weka-modules</package>
 
-<post>
-
-
-<file name="/etc/profile.d/weka.csh" perms="0644">
-set path = ( /opt/weka/bin $path )
-</file>
-<file name="/etc/profile.d/weka.sh" perms="0644">
-export PATH=/opt/weka/bin:$PATH
-</file>
-<file name="/opt/weka/bin/weka" perms="0755">
-#!/bin/bash
-java -jar /opt/weka/lib/weka.jar
-</file>
-
-</post>
 
 </kickstart>
