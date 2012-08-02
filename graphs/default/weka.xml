@@ -22,15 +22,5 @@ All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
   <tail>weka-common</tail>
 </order>
 
-<edge from="envmodules-common">
-  <to>weka-modules-common</to>
-</edge>
-<order head="envmodules-common">
-  <tail>weka-modules-common</tail>
-</order>
-
-<order head="weka-common">
-  <tail>weka-modules-common</tail>
-</order>
 
 </graph>
