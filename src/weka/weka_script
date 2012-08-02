@@ -1,2 +1,2 @@
 #!/bin/bash
-java -Xms16m -Xmx1024m -jar INSTALLROOT/weka/lib/weka.jar
+java -Xms16m -Xmx1024m -jar INSTALLROOT/lib/weka.jar
