@@ -72,8 +72,11 @@ install::
 	tar xvf $(NAME)-$(VERSION).tgz
 	cp $(SOURCE)/$(NAME).jar  $(ROOT)/$(PKGROOT)/lib
 	cp $(SOURCE)/data/*  $(ROOT)/$(PKGROOT)/data
-	cat weka.module | perl -pi -e "s!PKGROOT!$(PKGROOT)!g;s!MODULEROOT!/opt/modulefiles/applications/weka!g;s!VERSION!$(VERSION)!g" \
-          > $(REDHAT.ROOT)/src/build-weka-modules/$(NAME).module
+	cat weka.module | perl -pi -e "s!INSTALLROOT!$(PKGROOT)!g;s!MODULEROOT!/opt/modulefiles/applications/weka!g;s!VERSION!$(VERSION)!g" \
+          > $(REDHAT.ROOT)/src/build-weka-modules/$(NAME).module; \
+	cat weka_script | perl -pi -e "s!INSTALLROOT!$(PKGROOT)!g" \
+          > $(ROOT)/$(PKGROOT)/bin/weka
+
 
 clean::
 	rm -rf $(NAME)-$(VERSION)

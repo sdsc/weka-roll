@@ -4,7 +4,7 @@ cat > ROOT_PKGROOTMODULEROOT/VERSION <<END
 #%Module1.0
 module-whatis "weka"
 module-whatis "Version: VERSION"
-prepend-path PATH PKGROOT/bin 
+prepend-path PATH INSTALLROOT/bin 
 END
 
 chmod 0644  ROOT_PKGROOTMODULEROOT/VERSION
