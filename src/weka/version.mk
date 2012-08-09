@@ -1,3 +1,3 @@
 NAME    = weka
-VERSION = 3.4.19
+VERSION = 3.7.6
 RELEASE = 0

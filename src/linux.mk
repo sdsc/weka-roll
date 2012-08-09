@@ -56,4 +56,5 @@
 
 SRCDIRS = `find . -type d -maxdepth 1 \
 	-not -name CVS \
-	-not -name .`
+	-not -name weka-modules \
+	-not -name .` weka-modules
