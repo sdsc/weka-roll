@@ -17,6 +17,6 @@ All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
 
 <package>weka</package>
 <package>weka-modules</package>
-
+<package>weka-roll-test</package>
 
 </kickstart>
