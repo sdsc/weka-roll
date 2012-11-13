@@ -5,6 +5,8 @@ cat > ROOT_PKGROOTMODULEROOT/VERSION <<END
 module-whatis "weka"
 module-whatis "Version: VERSION"
 prepend-path PATH INSTALLROOT/bin 
+setenv WEKAINSTALL /opt/weka
+prepend-path CLASSPATH /opt/weka/lib/weka.jar
 END
 
 chmod 0644  ROOT_PKGROOTMODULEROOT/VERSION
