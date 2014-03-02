@@ -1,3 +1,3 @@
 NAME    	= weka-modules
-VERSION 	= 1.0
+VERSION 	= 3.7.10
 RELEASE 	= 0
