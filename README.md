@@ -23,7 +23,7 @@ Rocks development machine.
 
 ## Dependencies
 
-Unknown at this time.
+None.
 
 
 ## Building
@@ -71,10 +71,4 @@ run the test scripts execute the following command(s):
 
 ```shell
 % /root/rolltests/weka.t 
-ok 1 - weka is installed
-ok 2 - weka test run
-ok 3 - weka module installed
-ok 4 - weka version module installed
-ok 5 - weka version module link created
-1..5
 ```
