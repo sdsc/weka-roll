@@ -1,7 +1,6 @@
 NAME               = weka
 VERSION            = 3.7.10
 RELEASE            = 0
-PKGROOT            = /opt/weka
 RPM.EXTRAS         = AutoReq:No
 
 SRC_SUBDIR         = weka
