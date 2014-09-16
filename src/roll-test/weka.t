@@ -17,10 +17,7 @@ my $TESTFILE = 'tmpweka';
 open(OUT, ">$TESTFILE.sh");
 print OUT <<END;
 #!/bin/bash
-if test -f /etc/profile.d/modules.sh; then
-  . /etc/profile.d/modules.sh
-  module load weka
-fi
+module load weka
 java weka.classifiers.trees.J48 -t \$WEKAINSTALL/data/iris.arff
 END
 close(OUT);
@@ -37,7 +34,6 @@ SKIP: {
   $output = `/bin/bash $TESTFILE.sh 2>&1`;
   like($output, qr/Correctly Classified Instances\s+144/, 'weka test run');
 
-  skip 'modules not installed', 3 if ! -f '/etc/profile.d/modules.sh';
   `/bin/ls /opt/modulefiles/applications/weka/[0-9]* 2>&1`;
   ok($? == 0, 'weka module installed');
   `/bin/ls /opt/modulefiles/applications/weka/.version.[0-9]* 2>&1`;
