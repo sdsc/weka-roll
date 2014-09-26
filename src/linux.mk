@@ -54,8 +54,4 @@
 # @Copyright@
 #
 
-SRCDIRS = `find . -maxdepth 1 -type d \
-	-not -name CVS \
-	-not -name weka-modules \
-	-not -name build-* \
-	-not -name .` weka-modules
+SRCDIRS = `find . -maxdepth 1 -type d -not -name CVS -not -name .`

@@ -72,9 +72,6 @@ install::
 	mkdir -p -m 755 $(ROOT)/$(PKGROOT)/data
 	cp $(SOURCE_DIR)/$(NAME).jar $(ROOT)/$(PKGROOT)/lib
 	cp $(SOURCE_DIR)/data/* $(ROOT)/$(PKGROOT)/data
-	mkdir -p -m 755 $(REDHAT.ROOT)/src/build-weka-modules
-	cat weka.module | perl -pi -e "s!INSTALLROOT!$(PKGROOT)!g;s!MODULEROOT!/opt/modulefiles/applications/weka!g;s!VERSION!$(VERSION)!g" \
-	  > $(REDHAT.ROOT)/src/build-weka-modules/$(NAME).module
 	cat weka_script | perl -pi -e "s!INSTALLROOT!$(PKGROOT)!g" \
 	  > $(ROOT)/$(PKGROOT)/bin/weka; \
 	chmod 0755 $(ROOT)/$(PKGROOT)/bin/weka
