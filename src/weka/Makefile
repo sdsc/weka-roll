@@ -60,7 +60,23 @@ REDHAT.ROOT = $(CURDIR)/../../
 
 -include $(ROCKSROOT)/etc/Rules.mk
 include Rules.mk
-include pull.mk
+include $(SDSCDEVEL)/Pull.mk
+include $(SDSCDEVEL)/Rules.mk
+
+LICENSE_FILES = $(SOURCE_DIR)/LICENSE
+
+$(NAME).spec: DESCRIPTION LICENSE
+
+DESCRIPTION:
+	( \
+	  $(DESCRIBE_PKG) \
+	) > $@
+
+LICENSE: $(SRC_DIRS)
+	if ! grep -q "GNU GENERAL PUBLIC LICENSE" $(SOURCE_DIR)/COPYING; then \
+	  exit 2; \
+	fi
+	echo -e GPL > $@
 
 build: $(SRC_DIRS)
 	@echo "::: Package $(NAME) build complete :::"
@@ -70,7 +86,7 @@ install::
 	mkdir -p -m 755 $(ROOT)/$(PKGROOT)/bin
 	mkdir -p -m 755 $(ROOT)/$(PKGROOT)/lib
 	mkdir -p -m 755 $(ROOT)/$(PKGROOT)/data
-	cp $(SOURCE_DIR)/$(NAME).jar $(ROOT)/$(PKGROOT)/lib
+	cp $(SOURCE_DIR)/weka.jar $(ROOT)/$(PKGROOT)/lib
 	cp $(SOURCE_DIR)/data/* $(ROOT)/$(PKGROOT)/data
 	cat weka_script | perl -pi -e "s!INSTALLROOT!$(PKGROOT)!g" \
 	  > $(ROOT)/$(PKGROOT)/bin/weka; \
@@ -78,5 +94,5 @@ install::
 	@echo "::: Package $(NAME) install complete :::"
 
 clean::
-	rm -rf $(SOURCE_DIR)
+	rm -rf $(SOURCE_DIR) DESCRIPTION LICENSE
 
