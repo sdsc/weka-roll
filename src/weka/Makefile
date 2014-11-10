@@ -76,7 +76,7 @@ LICENSE: $(SRC_DIRS)
 	if ! grep -q "GNU GENERAL PUBLIC LICENSE" $(SOURCE_DIR)/COPYING; then \
 	  exit 2; \
 	fi
-	echo -e GPL > $@
+	echo GPL > $@
 
 build: $(SRC_DIRS)
 	@echo "::: Package $(NAME) build complete :::"
