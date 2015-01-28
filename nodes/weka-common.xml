@@ -12,8 +12,8 @@ Copyright (c) 2000 - 2014 The Regents of the University of California.
 All rights reserved. Rocks(r) v5.1 www.rocksclusters.org
 </copyright>
 
-<package>weka</package>
-<package>weka-modules</package>
-<package>weka-roll-test</package>
+<package>sdsc-weka</package>
+<package>sdsc-weka-modules</package>
+<package>sdsc-weka-roll-test</package>
 
 </kickstart>
