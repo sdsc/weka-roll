@@ -3,5 +3,5 @@ module-whatis "weka"
 module-whatis "Version: VERSION"
 setenv WEKAHOME /opt/weka
 setenv WEKAINSTALL /opt/weka
-prepend-path PATH opt/weka/bin 
+prepend-path PATH /opt/weka/bin 
 prepend-path CLASSPATH /opt/weka/lib/weka.jar
