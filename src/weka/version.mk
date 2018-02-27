@@ -1,6 +1,6 @@
 NAME           = sdsc-weka
 VERSION        = 3.7.12
-RELEASE        = 0
+RELEASE        = 1
 PKGROOT        = /opt/weka
 
 SRC_SUBDIR     = weka
@@ -13,4 +13,5 @@ SOURCE_DIR     = $(SOURCE_PKG:%.$(SOURCE_SUFFIX)=%)
 
 ZIP_PKGS       = $(SOURCE_PKG)
 
-RPM.EXTRAS     = AutoReq:No
+RPM.EXTRAS     = AutoReq:No\nAutoProv:No
+RPM.PREFIX     = $(PKGROOT)
